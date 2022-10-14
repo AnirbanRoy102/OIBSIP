@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DialogFragments.scheduleBottomSheet">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/scheduleType"
+        app:layout_constraintEnd_toEndOf="@+id/picker"
+        app:layout_constraintStart_toStartOf="@+id/picker"
+        app:layout_constraintTop_toTopOf="@+id/picker">
+
+        <TextView
+            android:id="@+id/showStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/start"
+            android:text="1:00 AM"
+            android:layout_marginBottom="2dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/picker"
+            app:layout_constraintEnd_toEndOf="@+id/picker"
+            app:layout_constraintStart_toStartOf="@+id/picker"
+            app:layout_constraintTop_toTopOf="@+id/picker" />
+
+        <TextView
+            android:id="@+id/showEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_flag_24"
+            android:text="6:00 AM"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/scheduleType"
+            app:layout_constraintEnd_toEndOf="@+id/picker"
+            app:layout_constraintStart_toStartOf="@+id/picker"
+            app:layout_constraintTop_toBottomOf="@+id/showStartTime" />
+
+
+    </LinearLayout>
+
+    <nl.joery.timerangepicker.TimeRangePicker
+        android:id="@+id/picker"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:trp_stepTimeMinutes="15"
+        app:trp_thumbColor="@color/white"
+        app:trp_clockFace="SAMSUNG"
+        app:trp_sliderRangeGradientStart="#228B22"
+        app:trp_sliderRangeGradientEnd="#B22222"
+        app:trp_clockLabelSize="14sp"
+        app:trp_thumbIconStart="@drawable/start"
+        app:trp_thumbIconEnd="@drawable/ic_baseline_flag_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trp_endTime="6:00"
+        app:trp_startTime="1:00" />
+
+    <TextView
+        android:id="@+id/scheduleType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="Select Type"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picker" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleType">
+
+        <TextView
+            android:id="@+id/takeScheduleTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="Task"
+            android:textStyle="bold"
+            android:textColor="@color/task"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/picker" />
+
+        <TextView
+            android:id="@+id/takeScheduleMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="Meeting"
+            android:textStyle="bold"
+            android:textColor="@color/schedule"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/picker" />
+
+        <TextView
+            android:id="@+id/takeScheduleEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="Event"
+            android:textStyle="bold"
+            android:textColor="@color/note"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/picker" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/takeScheduleInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:hint="Additional Info (Optional)"
+        android:padding="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/saveSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takeScheduleInfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</FrameLayout>

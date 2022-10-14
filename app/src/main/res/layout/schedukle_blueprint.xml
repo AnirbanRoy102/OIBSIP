@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#ced7d5">
+
+    <LinearLayout
+        android:id="@+id/scheduleBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/task_box"
+        android:layout_margin="4dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/scheduleBoxTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_margin="8dp"
+            android:text="01:00 PM - 04:30 PM"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/scheduleBoxInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meeting"
+            android:padding="4dp"
+            android:layout_margin="8dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
